@@ -1,0 +1,21 @@
+#dataTable {
+    font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace ;
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 0;
+    text-align: center;
+    border: 1px solid #000;
+    width: 30%;
+}
+
+#dataTable td {
+    border-top: 1px solid #000;
+}
+
+#dataTable td:not(:last-child) {
+    border-right: 1px solid #000;
+}
+
+#dataTable th:not(:last-child) {
+    border-right: 1px solid #000;
+}

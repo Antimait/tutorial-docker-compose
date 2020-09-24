@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  broker:
+    image: eclipse-mosquitto
+    ports:
+    - 1883:1883
+    command:
+      ["mosquitto", "-v"]
+  backend:
+    build: ./backend
+    volumes:
+    - ./backend/conf.json:/app/conf.json
+    depends_on:
+      - broker
+    ports:
+    - 8080:80
+  webapp:
+    build: ./webapp
+    depends_on:
+      - backend
+    ports:
+    - 5000:80
